@@ -75,6 +75,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 0 rgb(185, 82, 82);
     border: 3px solid rgb(185, 82, 82);
+    font-size: 18px;
 }
 
 .delBtn {
@@ -85,4 +86,5 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px rgb(84, 84, 199);
     border: 3px solid rgb(84, 84, 199);
+    font-size: 18px;
 }
