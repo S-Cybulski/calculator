@@ -21,9 +21,12 @@ const operate = function(operator, firstNum, lastNum){
     }
 }
 
+const displayVal = function(val){
+    
+}
+
 let firstNum;
 let operator;
 let lastNum;
 
 const numButtons = document.querySelector(".numbers");
-
