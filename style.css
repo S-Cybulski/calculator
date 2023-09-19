@@ -27,6 +27,11 @@ body {
     outline: solid rgb(102, 102, 102);
 }
 
+.numDisplay {
+    padding: 20px;
+    font-size: 36px;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
