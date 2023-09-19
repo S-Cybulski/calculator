@@ -25,4 +25,5 @@ let firstNum;
 let operator;
 let lastNum;
 
-console.log(operate("-",24,8));
+const numButtons = document.querySelector(".numbers");
+
