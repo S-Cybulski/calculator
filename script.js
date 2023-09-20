@@ -12,9 +12,9 @@ const operate = function(operator, firstNum, lastNum){
             return add(firstNum, lastNum);
         case "-":
             return subtract(firstNum, lastNum);
-        case "*":
+        case "x":
             return multiply(firstNum, lastNum);
-        case "/":
+        case "÷":
             return divide(firstNum, lastNum);
         default:
             return undefined;
@@ -22,38 +22,65 @@ const operate = function(operator, firstNum, lastNum){
 }
 
 const userInput = function(value){
-    if(value ==="clear"){
+    if(value === "clear"){
         displayVal = '';
         numDisplay.textContent = '';
         return
     }
 
-    if (value ==="delete"){
+    if (value === "delete"){
         displayVal = displayVal.slice(0,-1);
         numDisplay.textContent = displayVal;
         return
     }
 
-    if(value ==="="){
-        calculate();
+    if(value === "="){
+        firstNum = Number(displayVal.split(' ')[0]);
+        operator = displayVal.split(' ')[1];
+        lastNum = Number(currentVal);
+
+        displayVal += currentVal;
+        numDisplay.textContent = displayVal;
+
+        currentVal = operate(operator,firstNum,lastNum);
+        console.log(currentVal)
+        currentNumDisplay.textContent = currentVal;
+
+        return
     }
 
-    displayVal += value;
-    numDisplay.textContent = `${displayVal.toString()}`;
-    console.log(value);
+    if (value in [' x ',' + ',' - ',' ÷ ']){
+        console.log("Hello");
+        displayVal += currentVal;
+        displayVal += value;
+        numDisplay.textContent = displayVal;
+        currentVal = '';
+        currentNumDisplay.textContent = '';
+        return
+    }
+
+    currentVal += value;
+    currentNumDisplay.textContent = currentVal;
 }
 
 let firstNum;
 let operator;
 let lastNum;
 let displayVal = '';
+let currentVal = '';
+let isLast = false;
 
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
 
 let numDisplay = document.createElement('div');
 numDisplay.classList.add('numDisplay');
-numDisplay.textContent = 'Hellooooooo';
+numDisplay.textContent = '';
+
+let currentNumDisplay = document.createElement('div');
+currentNumDisplay.classList.add('numDisplay');
+currentNumDisplay.textContent = '0';
+currentNumDisplay.style.cssText = 'color: blue;'
 
 buttons.forEach((button) => {
 
@@ -61,8 +88,12 @@ buttons.forEach((button) => {
         userInput(button.id);
         if(button.id ==="clear"){
             displayVal = '';
+            currentVal = '';
+            currentNumDisplay.textContent = displayVal;
+            numDisplay.textContent = currentVal;
         }
     })
 });
 
 display.appendChild(numDisplay);
+display.appendChild(currentNumDisplay);
