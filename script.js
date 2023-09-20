@@ -9,7 +9,7 @@ const divide = (num1, num2) => num1 / num2;
 const operate = function(operator, firstNum, lastNum){
     switch(operator){
         case "+":
-            return add(firstNum, lastNum);
+            return add(Number(firstNum), Number(lastNum));
         case "-":
             return subtract(firstNum, lastNum);
         case "x":
@@ -23,6 +23,11 @@ const operate = function(operator, firstNum, lastNum){
 
 const userInput = function(value){
     console.log(value);
+    if(isLast){
+        displayVal = '';
+        numDisplay.textContent = '';
+        isLast = false;
+    }
     if(value === "clear"){
         displayVal = '';
         numDisplay.textContent = '';
@@ -51,6 +56,8 @@ const userInput = function(value){
         firstNum = currentVal;
         operator = undefined;
         lastNum = undefined;
+        
+        isLast = true;
 
         return
     }
