@@ -38,8 +38,8 @@ const userInput = function(value){
     }
 
     if (value === "delete"){
-        displayVal = displayVal.slice(0,-1);
-        numDisplay.textContent = displayVal;
+        currentVal = currentVal.slice(0,-1);
+        currentNumDisplay.textContent = currentVal;
         return
     }
 
