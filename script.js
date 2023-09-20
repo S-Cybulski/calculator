@@ -22,9 +22,13 @@ const operate = function(operator, firstNum, lastNum){
 }
 
 const userInput = function(value){
+    console.log(value);
     if(value === "clear"){
         displayVal = '';
         numDisplay.textContent = '';
+        operator = undefined;
+        firstNum = undefined;
+        lastNum = undefined;
         return
     }
 
@@ -35,9 +39,7 @@ const userInput = function(value){
     }
 
     if(value === "="){
-        firstNum = Number(displayVal.split(' ')[0]);
-        operator = displayVal.split(' ')[1];
-        lastNum = Number(currentVal);
+        lastNum = currentVal
 
         displayVal += currentVal;
         numDisplay.textContent = displayVal;
@@ -46,14 +48,22 @@ const userInput = function(value){
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
 
+        firstNum = currentVal;
+        operator = undefined;
+        lastNum = undefined;
+
         return
     }
 
-    if (value in [' x ',' + ',' - ',' ÷ ']){
-        console.log("Hello");
+    if (['x','+','-','÷'].includes(value)){
+        firstNum = Number(currentVal);
+        operator = value;
+
         displayVal += currentVal;
         displayVal += value;
+
         numDisplay.textContent = displayVal;
+
         currentVal = '';
         currentNumDisplay.textContent = '';
         return
