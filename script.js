@@ -21,12 +21,48 @@ const operate = function(operator, firstNum, lastNum){
     }
 }
 
-const displayVal = function(val){
-    
+const userInput = function(value){
+    if(value ==="clear"){
+        displayVal = '';
+        numDisplay.textContent = '';
+        return
+    }
+
+    if (value ==="delete"){
+        displayVal = displayVal.slice(0,-1);
+        numDisplay.textContent = displayVal;
+        return
+    }
+
+    if(value ==="="){
+        calculate();
+    }
+
+    displayVal += value;
+    numDisplay.textContent = `${displayVal.toString()}`;
+    console.log(value);
 }
 
 let firstNum;
 let operator;
 let lastNum;
+let displayVal = '';
 
-const numButtons = document.querySelector(".numbers");
+const display = document.querySelector('.display');
+const buttons = document.querySelectorAll('button');
+
+let numDisplay = document.createElement('div');
+numDisplay.classList.add('numDisplay');
+numDisplay.textContent = 'Hellooooooo';
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        userInput(button.id);
+        if(button.id ==="clear"){
+            displayVal = '';
+        }
+    })
+});
+
+display.appendChild(numDisplay);

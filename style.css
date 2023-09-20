@@ -28,6 +28,8 @@ body {
 }
 
 .numDisplay {
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     font-size: 36px;
 }
