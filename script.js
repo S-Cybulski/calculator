@@ -52,6 +52,10 @@ const userInput = function(value){
     }
 
     if(value === "="){
+        if(currentVal === ''){
+            return;
+        }
+        
         lastNum = currentVal
         
         displayVal += currentVal;
