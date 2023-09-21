@@ -20,9 +20,9 @@ body {
 .display {
     display: flex;
     flex-direction: column;
-    width: 356px;
-    min-width: 356px;
-    min-height: 150px;
+    width: 346px;
+    min-width: 346px;
+    min-height: 140px;
     background-color: rgb(230, 230, 230);
     margin: 20px;
     margin-bottom: 10px;
@@ -30,7 +30,9 @@ body {
     outline: solid rgb(102, 102, 102);
     word-wrap: break-word;
     word-break: break-all;
+    text-align: right;
     align-items: flex-end;
+    padding: 10px;
 }
 
 .numDisplay {
@@ -38,11 +40,15 @@ body {
     font-size: 28px;
     color: red;
     min-height: 32px;
+    max-width: 326px;
+    margin-top: 10px;
 }
 
 .currentNumDisplay {
+    max-width: 326px;
     font-size: 42px;
-    margin-top: 75px;
+    margin-top: 58px;
+    margin-right: 10px;
     color: red;
     min-height: 46px;
 }
