@@ -55,7 +55,12 @@ const userInput = function(value){
         if(currentVal === ''){
             return;
         }
-        
+
+        if(typeof(operator) === 'undefined'){
+            numDisplay.textContent = '';
+            return;
+        }
+
         lastNum = currentVal
         
         displayVal += currentVal;
