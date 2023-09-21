@@ -28,9 +28,10 @@ const userInput = function(value){
         numDisplay.textContent = '';
         isLast = false;
     }
+
     if(value === "clear"){
         displayVal = '';
-        numDisplay.textContent = '';
+        currentNumDisplay.textContent = '0';
         operator = undefined;
         firstNum = undefined;
         lastNum = undefined;
@@ -95,9 +96,8 @@ numDisplay.classList.add('numDisplay');
 numDisplay.textContent = '';
 
 let currentNumDisplay = document.createElement('div');
-currentNumDisplay.classList.add('numDisplay');
+currentNumDisplay.classList.add('currentNumDisplay');
 currentNumDisplay.textContent = '0';
-currentNumDisplay.style.cssText = 'color: blue;'
 
 buttons.forEach((button) => {
 
