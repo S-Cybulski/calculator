@@ -46,10 +46,10 @@ const userInput = function(value){
 
     if(value === "="){
         lastNum = currentVal
-
+        
         displayVal += currentVal;
         numDisplay.textContent = displayVal;
-
+        
         currentVal = operate(operator,firstNum,lastNum).toString();
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
@@ -64,31 +64,54 @@ const userInput = function(value){
     }
 
     if (['x','+','-','÷'].includes(value)){
-        // if(operator !== undefined){
-        //     let temp = currentVal;
-        //     currentVal = currentVal.slice(0,-1)
-        //     firstNum = Number(currentVal);
-        //     displayVal = userInput("=");
-        //     currentVal = temp;
-        //     numDisplay.textContent = displayVal;
-        //     return
-        // }
-        
+        if(typeof(operator) !== 'undefined'){
+            //numDisplay.textContent = '';
+            multipleOperators();
+            numDisplay.textContent += value;
+            operator = value;
+            currentVal = '';
+            currentNumDisplay.textContent = '';
+            return
+            }
+
         firstNum = Number(currentVal);
         operator = value;
-
+        
         displayVal += currentVal;
         displayVal += value;
-
+        
         numDisplay.textContent = displayVal;
-
+        
         currentVal = '';
         currentNumDisplay.textContent = '';
+        
         return
     }
 
     currentVal += value;
     currentNumDisplay.textContent = currentVal;
+}
+
+const multipleOperators = function(){
+
+        lastNum = currentVal
+        
+        displayVal += currentVal;
+        numDisplay.textContent = displayVal;
+        
+        currentVal = operate(operator,firstNum,lastNum).toString();
+        console.log(currentVal)
+        currentNumDisplay.textContent = currentVal;
+        
+        numDisplay.textContent = currentVal;
+
+        firstNum = currentVal;
+        operator = undefined;
+        lastNum = undefined;
+        
+        isLast = false
+        
+        return
 }
 
 let firstNum;
