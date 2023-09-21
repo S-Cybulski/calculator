@@ -64,6 +64,16 @@ const userInput = function(value){
     }
 
     if (['x','+','-','÷'].includes(value)){
+        // if(operator !== undefined){
+        //     let temp = currentVal;
+        //     currentVal = currentVal.slice(0,-1)
+        //     firstNum = Number(currentVal);
+        //     displayVal = userInput("=");
+        //     currentVal = temp;
+        //     numDisplay.textContent = displayVal;
+        //     return
+        // }
+        
         firstNum = Number(currentVal);
         operator = value;
 
