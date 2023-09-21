@@ -50,7 +50,7 @@ const userInput = function(value){
         displayVal += currentVal;
         numDisplay.textContent = displayVal;
 
-        currentVal = operate(operator,firstNum,lastNum);
+        currentVal = operate(operator,firstNum,lastNum).toString();
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
 
