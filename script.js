@@ -22,11 +22,18 @@ const operate = function(operator, firstNum, lastNum){
 }
 
 const userInput = function(value){
+    
+    if(currentNumDisplay.textContent === "ERROR"){
+        clear();
+        currentVal = '';
+    }
+
     if(value === "."){
         if (currentVal.includes(".")){
         return
         }
     }
+
     if(isLast){
         displayVal = '';
         numDisplay.textContent = '';
@@ -34,12 +41,8 @@ const userInput = function(value){
     }
 
     if(value === "clear"){
-        displayVal = '';
-        currentNumDisplay.textContent = '0';
-        operator = undefined;
-        firstNum = undefined;
-        lastNum = undefined;
-        return
+        clear()
+        return;
     }
 
     if (value === "delete"){
@@ -55,6 +58,12 @@ const userInput = function(value){
         numDisplay.textContent = displayVal;
         
         currentVal = operate(operator,firstNum,lastNum).toString();
+        if(Number(currentVal) === Infinity){
+            clear();
+            currentNumDisplay.textContent = 'ERROR';
+            return;
+        }
+
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
 
@@ -116,6 +125,19 @@ const multipleOperators = function(){
         isLast = false
 
         return
+}
+
+const clear = function(){
+
+    displayVal = '';
+    currentNumDisplay.textContent = '0';
+    numDisplay.textContent = '';
+    currentVal = '';
+    operator = undefined;
+    firstNum = undefined;
+    lastNum = undefined;
+    return
+
 }
 
 let firstNum;
