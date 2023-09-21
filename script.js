@@ -22,7 +22,11 @@ const operate = function(operator, firstNum, lastNum){
 }
 
 const userInput = function(value){
-    console.log(value);
+    if(value === "."){
+        if (currentVal.includes(".")){
+        return
+        }
+    }
     if(isLast){
         displayVal = '';
         numDisplay.textContent = '';
@@ -110,7 +114,7 @@ const multipleOperators = function(){
         lastNum = undefined;
         
         isLast = false
-        
+
         return
 }
 
