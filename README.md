@@ -3,14 +3,15 @@
 An online calculator with basic arithmetic operations built using HTML, CSS and JS. It can be controlled by a mouse and keyboard.
 
 keyboard controls:
-
-0-9        inputs number
--          subtracts
-+          adds
-/          divides
-*          multiplies
-del        clears
-backspace  removes 1 digit
+<ul>
+<li>0-9        inputs number</li>
+<li>-          subtracts</li>
+<li>+          adds</li>
+<li>/          divides</li>
+<li>*          multiplies</li>
+<li>del        clears</li>
+<li>backspace  removes 1 digit</li>
+<ul>
 
 ### Features
 All basic operations are supported (divide, multiple, add, subtract).
