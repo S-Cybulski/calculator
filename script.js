@@ -167,6 +167,26 @@ let currentNumDisplay = document.createElement('div');
 currentNumDisplay.classList.add('currentNumDisplay');
 currentNumDisplay.textContent = '0';
 
+const validKeys = ['1','2','3','4','5','6','7','8','9','0','Backspace','Enter','*','/','+','-','.','Delete'];
+
+document.addEventListener('keydown', (event) => {
+        if(validKeys.includes(event.key)){
+            switch(event.key){
+                case 'Enter':
+                    userInput('=');
+                    return;
+                case 'Delete':
+                    userInput('clear');
+                    return;
+                case 'Backspace':
+                    userInput('delete');
+                    return;
+                default:
+                    userInput(event.key);
+            }
+        }
+    });
+
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
