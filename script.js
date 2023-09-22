@@ -181,6 +181,12 @@ document.addEventListener('keydown', (event) => {
                 case 'Backspace':
                     userInput('delete');
                     return;
+                case '*':
+                    userInput('x');
+                    return;
+                case '/':
+                    userInput('÷');
+                    return;
                 default:
                     userInput(event.key);
             }
