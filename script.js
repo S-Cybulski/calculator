@@ -64,7 +64,7 @@ const userInput = function(value){
         lastNum = currentVal
         
         displayVal += currentVal;
-        numDisplay.textContent = displayVal;
+        // numDisplay.textContent = displayVal;
         
         currentVal = (Math.round(operate(operator,firstNum,lastNum)* 1000)/ 1000).toString();
         if(Number(currentVal) === Infinity){
@@ -75,7 +75,8 @@ const userInput = function(value){
 
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
-
+        
+        numDisplay.textContent = `${firstNum.toString()}${operator}${lastNum.toString()}`;
         firstNum = currentVal;
         operator = undefined;
         lastNum = undefined;
