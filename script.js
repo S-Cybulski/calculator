@@ -66,7 +66,7 @@ const userInput = function(value){
         displayVal += currentVal;
         numDisplay.textContent = displayVal;
         
-        currentVal = operate(operator,firstNum,lastNum).toString();
+        currentVal = (Math.round(operate(operator,firstNum,lastNum)* 1000)/ 1000).toString();
         if(Number(currentVal) === Infinity){
             clear();
             currentNumDisplay.textContent = 'ERROR';
@@ -121,7 +121,7 @@ const multipleOperators = function(){
         displayVal += currentVal;
         numDisplay.textContent = displayVal;
         
-        currentVal = operate(operator,firstNum,lastNum).toString();
+        currentVal = (Math.round(operate(operator,firstNum,lastNum) * 1000) / 1000).toString();
         console.log(currentVal)
         currentNumDisplay.textContent = currentVal;
         
