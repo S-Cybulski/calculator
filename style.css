@@ -94,9 +94,6 @@ body {
     transform: translateY(5px);
 }
 
-.operator {
-}
-
 .clearAndDel {
     display: flex;
     justify-content: center;
