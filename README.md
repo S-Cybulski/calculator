@@ -11,7 +11,7 @@ keyboard controls:
 <li>*          multiplies</li>
 <li>del        clears</li>
 <li>backspace  removes 1 digit</li>
-</ul>
+<ul>
 
 ### Features
 All basic operations are supported (divide, multiple, add, subtract).
