@@ -1,8 +1,21 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(255, 251, 241);
+}
+
+.title {
+    text-align: center;
+    font-size: 48px;
+    font-family: monospace;
+    padding: 50px;
+}
+
+.github {
+    margin-top: 50px;
 }
 
 .calculator {
